@@ -46,7 +46,7 @@ public class ClientController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         try{
-            client = new Client(new Socket("10.18.22.249",4206));
+            client = new Client(new Socket("",4206));
             System.out.println("connected");
             ClientController.addLabel("You're Connected To aTA!", vbox_messages);
             ClientController.addLabel("Feel free to ask me anything related to Data Science :)", vbox_messages);
