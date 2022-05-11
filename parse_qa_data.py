@@ -33,13 +33,13 @@ def parse(directory):
 
     stackexchangefiles = ["{}.xml".format(table) for table in tables]
 
-    full_path = "data_" + '\\' + directory
+    full_path = "./data/stackexchange_raw/" + directory
 
     xmlfile = "{}\\{}".format(full_path, stackexchangefiles[1])
 
     columns = tables["Posts"]
 
-    f = open("qa\\"+directory+".qa.csv", 'w', newline='', encoding="utf-8")
+    f = open("./data/qa_csv/"+directory+".qa.csv", 'w', newline='', encoding="utf-8")
     w = csv.writer(f, quoting=csv.QUOTE_MINIMAL)
     # w.writerow(columns)
     l = []
@@ -85,7 +85,7 @@ def parse(directory):
     f.close()
 
 if __name__ == '__main__':
-    rootdir = "data_"
+    rootdir = "./data/stackexchange_raw/"
     for subdir, dirs, files in os.walk(rootdir):
         for dirsIN in dirs:
             print()
